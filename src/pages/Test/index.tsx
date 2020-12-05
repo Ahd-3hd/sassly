@@ -7,6 +7,7 @@ import {
   Heading4,
   Paragraph,
 } from "../../components/Typography";
+import { NavLink } from "../../components/Links";
 const Test = () => {
   return (
     <Layout>
@@ -23,6 +24,7 @@ const Test = () => {
         <Paragraph variant="pLarge">Paragraph</Paragraph>
         <Paragraph variant="pNormal">Paragraph</Paragraph>
         <Paragraph variant="pSmall">Paragraph</Paragraph>
+        <NavLink href="#" text="Visit Page" />
       </div>
     </Layout>
   );
