@@ -16,9 +16,9 @@ const fontSizes = {
   heading4: "26px",
   heading5: "22px",
   heading6: "18px",
-  paragraphSmall: "16px",
-  paragraphDefault: "18px",
-  paragraphLarge: "22px",
+  pSmall: "16px",
+  pNormal: "18px",
+  pLarge: "22px",
 };
 
 export default {
