@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.button<{
   variant: "small" | "normal" | "large";
-  primary?: boolean;
+  primary?: any;
 }>`
   padding: ${({ variant }) => {
     if (variant === "small") return "14px 32px";
@@ -31,11 +31,19 @@ const Wrapper = styled.button<{
     color: ${({ theme: { colors } }) => colors.white};
   }
   outline: none;
+  margin: 0 0.2rem;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.05);
 `;
 
-const Button = () => {
+const Button = ({
+  variant,
+  primary,
+}: {
+  variant: "small" | "normal" | "large";
+  primary?: boolean;
+}) => {
   return (
-    <Wrapper variant="normal" primary>
+    <Wrapper variant={variant} primary={primary}>
       click
     </Wrapper>
   );

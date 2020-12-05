@@ -16,7 +16,12 @@ const Test = () => {
           margin: "1rem",
         }}
       >
-        <Button />
+        <Button variant="large" primary />
+        <Button variant="normal" primary />
+        <Button variant="small" primary />
+        <Button variant="large" />
+        <Button variant="normal" />
+        <Button variant="small" />
         <Heading1>Heading1</Heading1>
         <Heading2>Heading2</Heading2>
         <Heading3>Heading3</Heading3>
