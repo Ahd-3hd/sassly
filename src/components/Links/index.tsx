@@ -5,7 +5,7 @@ const NavLinkListItem = styled.li`
   display: inline-block;
   :hover {
     > a {
-      color: ${({ theme: { colors } }) => colors.gray2};
+      color: ${({ theme: { colors } }) => colors.grey2};
       transform: translateY(-5px);
     }
   }

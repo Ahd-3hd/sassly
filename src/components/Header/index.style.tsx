@@ -79,6 +79,8 @@ export const HeaderMedia = styled.div`
   align-items: flex-end;
   justify-content: center;
   position: relative;
+  max-width: 1200px;
+  margin: 1rem auto;
 `;
 
 export const Foreground = styled.img`
