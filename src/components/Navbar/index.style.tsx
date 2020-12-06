@@ -97,6 +97,9 @@ export const MobileDropDownMenu = styled.ul<{ shouldShow: boolean }>`
   border-radius: 0 0 1rem 1rem;
   transition: top 0.5s;
   z-index: -1;
+  @media (min-width: 999px) {
+    display: none;
+  }
 `;
 export const MobileDropMenuButton = styled.li`
   list-style-type: none;
