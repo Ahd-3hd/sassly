@@ -73,3 +73,37 @@ export const ArrowImg = styled.img`
 export const ArrowLabel = styled.p`
   color: ${({ theme: { colors } }) => colors.grey2};
 `;
+
+export const HeaderMedia = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+`;
+
+export const Foreground = styled.img`
+  width: 100%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  @media (min-width: 768px) {
+    width: 65%;
+  }
+`;
+export const Background = styled.img<{ direction: string }>`
+  display: none;
+  max-width: 300px;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  @media (min-width: 768px) {
+    display: block;
+    position: absolute;
+    bototm: 0;
+    z-index: -1;
+    opacity: 0.9;
+    ${({ direction }) => {
+      if (direction === "left") return "left: 2rem;";
+      if (direction === "right") return "right:2rem;";
+    }};
+  }
+`;

@@ -5,11 +5,16 @@ import {
   NewsletterArrowContainer,
   ArrowImg,
   ArrowLabel,
+  HeaderMedia,
+  Foreground,
+  Background,
 } from "./index.style";
 import { Heading1, Paragraph } from "../Typography";
 import Button from "../Buttons";
 import arrowImg from "../../assets/img/newsletterarrow.svg";
-
+import foregroundImg from "../../assets/img/header1.jpg";
+import backgroudImg1 from "../../assets/img/header2.svg";
+import backgroudImg2 from "../../assets/img/header3.svg";
 const Header = () => {
   return (
     <Wrapper>
@@ -29,6 +34,11 @@ const Header = () => {
           <ArrowImg src={arrowImg} />
         </NewsletterArrowContainer>
       </NewsletterContainer>
+      <HeaderMedia>
+        <Background src={backgroudImg1} alt="plant" direction="left" />
+        <Background src={backgroudImg2} alt="plant" direction="right" />
+        <Foreground src={foregroundImg} alt="screenshot" />
+      </HeaderMedia>
     </Wrapper>
   );
 };
