@@ -45,7 +45,6 @@ export const PromoCard = styled.div`
     align-items: center;
     text-align: center;
   }
-}
   @media (min-width: 900px) {
     height: 300px;
   }
