@@ -40,6 +40,12 @@ export const PromoCard = styled.div`
   flex-direction: column;
   justify-content: space-between;
   border-bottom: 1px solid ${({ theme: { colors } }) => colors.grey4};
+  > * {
+    transition: transform 0.1s ease-in;
+  }
+  :hover > * {
+    transform: scale(0.98);
+  }
   @media (min-width: 480px) {
     border-bottom: none;
     align-items: center;
