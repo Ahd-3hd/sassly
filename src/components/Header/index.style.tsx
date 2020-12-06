@@ -56,3 +56,20 @@ export const NewsletterInput = styled.input`
   outline: none;
   width: 100%;
 `;
+
+export const NewsletterArrowContainer = styled.div`
+  display: flex;
+  align-items: center;
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+`;
+export const ArrowImg = styled.img`
+  margin-left: 0.5rem;
+  width: 100%;
+  max-width: 70px;
+  opacity: 0.7;
+`;
+export const ArrowLabel = styled.p`
+  color: ${({ theme: { colors } }) => colors.grey2};
+`;

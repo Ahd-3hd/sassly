@@ -1,6 +1,14 @@
-import { Wrapper, NewsletterContainer, NewsletterInput } from "./index.style";
+import {
+  Wrapper,
+  NewsletterContainer,
+  NewsletterInput,
+  NewsletterArrowContainer,
+  ArrowImg,
+  ArrowLabel,
+} from "./index.style";
 import { Heading1, Paragraph } from "../Typography";
 import Button from "../Buttons";
+import arrowImg from "../../assets/img/newsletterarrow.svg";
 
 const Header = () => {
   return (
@@ -16,6 +24,10 @@ const Header = () => {
           placeholder="Enter your email here..."
         />
         <Button size="small" primary label="Get Started" />
+        <NewsletterArrowContainer>
+          <ArrowLabel>Get started for free</ArrowLabel>
+          <ArrowImg src={arrowImg} />
+        </NewsletterArrowContainer>
       </NewsletterContainer>
     </Wrapper>
   );
