@@ -80,8 +80,8 @@ export const MenuButton = styled.button`
 export const MobileDropDownMenu = styled.ul<{ shouldShow: boolean }>`
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: ${({ shouldShow }) => (shouldShow ? "4rem" : "-100%")};
+  position: absolute;
+  top: ${({ shouldShow }) => (shouldShow ? "4rem" : "-900%")};
   left: 0;
   width: 100%;
   background: #fbfbfb;

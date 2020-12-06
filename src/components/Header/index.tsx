@@ -49,7 +49,7 @@ const Header = () => {
       </HeaderMedia>
       <CompaniesContainer>
         {companiesLogos.map((logo, index) => (
-          <CompanyLogo src={logo} alt="logo" />
+          <CompanyLogo src={logo} alt="logo" key={index} />
         ))}
       </CompaniesContainer>
     </Wrapper>

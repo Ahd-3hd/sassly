@@ -22,6 +22,8 @@ export const Wrapper = styled.header`
       text-align: center;
     }
   }
+  padding-bottom: 2rem;
+  border-bottom: 1px solid ${({ theme: { colors } }) => colors.grey3};
 `;
 
 export const NewsletterContainer = styled.form`

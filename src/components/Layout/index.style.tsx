@@ -15,4 +15,7 @@ export const GlobalStyles = createGlobalStyle`
         font-family:inherit;
     }
 `;
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  max-width: 1200px;
+  margin: auto;
+`;

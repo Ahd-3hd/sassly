@@ -27,5 +27,6 @@ export const Heading4 = styled.h4`
 
 export const Paragraph = styled.p<{ variant: "pSmall" | "pNormal" | "pLarge" }>`
   font-size: ${({ theme: { fontSizes }, variant }) => fontSizes[variant]};
-  color: ${({ theme: { colors } }) => colors.gray2};
+  color: ${({ theme: { colors } }) => colors.grey2};
+  line-height: 150%;
 `;
