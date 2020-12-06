@@ -8,6 +8,8 @@ import {
   HeaderMedia,
   Foreground,
   Background,
+  CompaniesContainer,
+  CompanyLogo,
 } from "./index.style";
 import { Heading1, Paragraph } from "../Typography";
 import Button from "../Buttons";
@@ -15,6 +17,12 @@ import arrowImg from "../../assets/img/newsletterarrow.svg";
 import foregroundImg from "../../assets/img/header1.jpg";
 import backgroudImg1 from "../../assets/img/header2.svg";
 import backgroudImg2 from "../../assets/img/header3.svg";
+import company1 from "../../assets/img/company1.svg";
+import company2 from "../../assets/img/company2.svg";
+import company3 from "../../assets/img/company3.svg";
+import company4 from "../../assets/img/company4.svg";
+import company5 from "../../assets/img/company5.svg";
+const companiesLogos = [company1, company2, company3, company4, company5];
 const Header = () => {
   return (
     <Wrapper>
@@ -39,6 +47,11 @@ const Header = () => {
         <Background src={backgroudImg2} alt="plant" direction="right" />
         <Foreground src={foregroundImg} alt="screenshot" />
       </HeaderMedia>
+      <CompaniesContainer>
+        {companiesLogos.map((logo, index) => (
+          <CompanyLogo src={logo} alt="logo" />
+        ))}
+      </CompaniesContainer>
     </Wrapper>
   );
 };

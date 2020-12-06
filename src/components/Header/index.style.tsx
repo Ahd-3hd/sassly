@@ -109,3 +109,23 @@ export const Background = styled.img<{ direction: string }>`
     }};
   }
 `;
+
+export const CompaniesContainer = styled.div`
+  max-width: 1200px;
+  margin: 2rem auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+  }
+`;
+export const CompanyLogo = styled.img`
+  transition: transform 0.3s ease-in;
+  margin: 0.5rem 2rem;
+  width: 150px;
+
+  :hover {
+    transform: scale(0.9);
+  }
+`;
