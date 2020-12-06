@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const Wrapper = styled.button<{
-  variant: "small" | "normal" | "large";
+  size: "small" | "normal" | "large";
   primary?: any;
 }>`
-  padding: ${({ variant }) => {
-    if (variant === "small") return "14px 32px";
-    if (variant === "normal") return "20px 36px";
-    if (variant === "large") return "20px 68px";
+  padding: ${({ size }) => {
+    if (size === "small") return "14px 32px";
+    if (size === "normal") return "20px 36px";
+    if (size === "large") return "20px 68px";
   }};
   background: ${({ theme: { colors }, primary }) =>
     primary ? colors.primary : colors.white};
@@ -15,9 +15,9 @@ const Wrapper = styled.button<{
   color: ${({ theme: { colors }, primary }) =>
     primary ? colors.white : colors.primary};
   font-weight: bold;
-  font-size: ${({ variant }) => {
-    if (variant === "small" || variant === "normal") return "16px";
-    if (variant === "large") return "22px";
+  font-size: ${({ size }) => {
+    if (size === "small" || size === "normal") return "16px";
+    if (size === "large") return "22px";
   }};
   border-radius: 6px;
   cursor: pointer;
@@ -36,15 +36,19 @@ const Wrapper = styled.button<{
 `;
 
 const Button = ({
-  variant,
+  size,
   primary,
+  label,
+  className,
 }: {
-  variant: "small" | "normal" | "large";
+  size: "small" | "normal" | "large";
   primary?: boolean;
+  label: string;
+  className?: string;
 }) => {
   return (
-    <Wrapper variant={variant} primary={primary}>
-      click
+    <Wrapper size={size} primary={primary} className={className}>
+      {label}
     </Wrapper>
   );
 };

@@ -8,6 +8,7 @@ import {
   Paragraph,
 } from "../../components/Typography";
 import { NavLink } from "../../components/Links";
+import { GrayCard } from "../../components/Cards";
 const Test = () => {
   return (
     <Layout>
@@ -16,12 +17,12 @@ const Test = () => {
           margin: "1rem",
         }}
       >
-        <Button variant="large" primary />
-        <Button variant="normal" primary />
-        <Button variant="small" primary />
-        <Button variant="large" />
-        <Button variant="normal" />
-        <Button variant="small" />
+        <Button size="large" primary label="click" />
+        <Button size="normal" primary label="click" />
+        <Button size="small" primary label="click" />
+        <Button size="large" label="click" />
+        <Button size="normal" label="click" />
+        <Button size="small" label="click" />
         <Heading1>Heading1</Heading1>
         <Heading2>Heading2</Heading2>
         <Heading3>Heading3</Heading3>
@@ -30,6 +31,7 @@ const Test = () => {
         <Paragraph variant="pNormal">Paragraph</Paragraph>
         <Paragraph variant="pSmall">Paragraph</Paragraph>
         <NavLink href="#" text="Visit Page" />
+        <GrayCard />
       </div>
     </Layout>
   );

@@ -16,6 +16,7 @@ const NavLinkAnchor = styled.a`
   text-decoration: none;
   transition: 0.3s ease-in;
   display: inline-block;
+  font-size: 18px;
 `;
 
 export const NavLink = ({ href, text }: { href: string; text: string }) => {

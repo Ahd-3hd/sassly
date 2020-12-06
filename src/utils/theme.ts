@@ -1,11 +1,11 @@
 const colors = {
   primary: "#0C0C0C",
   grey1: "#343434",
-  gray2: "#626262",
-  gray3: "#9C9C9C",
-  gray4: "#D2D2D2",
-  gray5: "#F5F5F5",
-  gray6: "#FBFBFB",
+  grey2: "#626262",
+  grey3: "#9C9C9C",
+  grey4: "#D2D2D2",
+  grey5: "#F5F5F5",
+  grey6: "#FBFBFB",
   white: "#FFFFFF",
 };
 
