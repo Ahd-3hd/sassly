@@ -4,6 +4,7 @@ import Promotions from "../../components/Promotions";
 import Features from "../../components/Features";
 import Integrations from "../../components/Integrations";
 import Audience from "../../components/Audience";
+import Customers from "../../components/Customers";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Features />
       <Integrations />
       <Audience />
+      <Customers />
     </Layout>
   );
 };
