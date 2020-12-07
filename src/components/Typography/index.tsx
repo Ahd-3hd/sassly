@@ -6,11 +6,12 @@ export const Heading1 = styled.h1`
   margin-bottom: 27px;
   color: ${({ theme: { colors } }) => colors.primary};
 `;
-export const Heading2 = styled.h2`
+export const Heading2 = styled.h2<{ align?: string }>`
   font-size: ${({ theme: { fontSizes } }) => fontSizes.heading2};
   margin-top: 0;
   margin-bottom: 16px;
   color: ${({ theme: { colors } }) => colors.primary};
+  text-align: ${({ align }) => align};
 `;
 export const Heading3 = styled.h3`
   font-size: ${({ theme: { fontSizes } }) => fontSizes.heading3};
