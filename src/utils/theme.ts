@@ -21,7 +21,9 @@ const fontSizes = {
   pLarge: "22px",
 };
 
-export default {
+const theme = {
   colors,
   fontSizes,
 };
+
+export default theme;
