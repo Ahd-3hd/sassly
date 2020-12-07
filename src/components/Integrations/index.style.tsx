@@ -15,4 +15,9 @@ export const NewsletterContainer = styled.div`
 `;
 export const TextContainer = styled.div``;
 
-export const IntegrationsContainer = styled.div``;
+export const IntegrationsContainer = styled.div`
+  @media (min-width: 990px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+`;
