@@ -13,7 +13,7 @@ export const Wrapper = styled.header`
 
   @media (min-width: 768px) {
     > h1 {
-      max-width: 25ch;
+      max-width: 20ch;
       text-align: center;
       margin: auto;
       font-size: ${({ theme: { fontSizes } }) => fontSizes.heading1};
