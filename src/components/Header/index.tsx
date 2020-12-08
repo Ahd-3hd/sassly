@@ -22,7 +22,8 @@ const Header = () => {
     <Wrapper>
       <Heading1>The Next Generation Notes App</Heading1>
       <Paragraph variant="pLarge">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        This page is for Demo purposes only - it is not intended for commercial
+        use!
       </Paragraph>
       <Newsletter withArrow center />
       <HeaderMedia>

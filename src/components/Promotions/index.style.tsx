@@ -4,12 +4,13 @@ export const Wrapper = styled.div`
   padding: 1rem;
 `;
 export const TitleContainer = styled.div`
+  margin-bottom: 1rem;
   > p {
-    max-width: 40ch;
+    max-width: 30ch;
     margin: 0;
   }
   > h3 {
-    max-width: 30ch;
+    max-width: 20ch;
     font-size: ${({ theme: { fontSizes } }) => fontSizes.heading2};
     word-break: keep-all;
   }
