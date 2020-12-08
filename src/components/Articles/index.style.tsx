@@ -56,22 +56,25 @@ export const ArticlesContainer = styled.div`
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     grid-column-gap: 1rem;
     grid-row-gap: 0px;
-    > a {
-      height: 300px;
-    }
+    align-content: end;
+    margin-top: 5rem;
     > a:nth-child(1) {
       grid-area: 1 / 1 / 2 / 3;
       display: flex;
       flex-direction: row-reverse;
+      align-self: end;
+      height: auto;
     }
     > a:nth-child(2) {
       grid-area: 2 / 1 / 3 / 2;
+      height: auto;
     }
     > a:nth-child(3) {
       grid-area: 2 / 2 / 3 / 3;
+      height: auto;
     }
   }
 `;
