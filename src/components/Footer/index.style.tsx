@@ -13,7 +13,6 @@ export const TopSection = styled.div`
     }
   }
 `;
-export const BottomSection = styled.div``;
 export const LogoContainer = styled.div``;
 export const LinksContainer = styled.div`
   @media (min-width: 480px) {
@@ -130,4 +129,19 @@ export const MobileButtonsContainer = styled.div`
       margin: 0 0.5rem;
     }
   }
+`;
+
+export const BottomSection = styled.div`
+  text-align: center;
+  margin-top: 0.7rem 0;
+`;
+export const BottomSectionP = styled.p`
+  font-size: 13px;
+  color: ${({ theme: { colors } }) => colors.grey2};
+`;
+export const BottomLink = styled.a`
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: ${({ theme: { colors } }) => colors.primary};
+  font-weight: bold;
 `;

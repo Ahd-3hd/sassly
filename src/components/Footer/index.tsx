@@ -16,6 +16,8 @@ import {
   MobileParagraph,
   MobileButton,
   MobileButtonsContainer,
+  BottomSectionP,
+  BottomLink,
 } from "./index.style";
 import logo from "../../assets/img/logo.svg";
 import Facebook from "../../assets/svg/Facebook.svg";
@@ -96,7 +98,13 @@ const Footer = () => {
           </MobileButtonsContainer>
         </MobileContainer>
       </TopSection>
-      <BottomSection></BottomSection>
+      <BottomSection>
+        <BottomSectionP>
+          Re-implementation of a webflow design using ReactJS - not inteded for
+          commercial use.
+          <BottomLink href="https://github.com/Zeus3hd">Ahd Hani</BottomLink>
+        </BottomSectionP>
+      </BottomSection>
     </Wrapper>
   );
 };
