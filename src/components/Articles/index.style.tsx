@@ -59,24 +59,25 @@ export const ArticlesContainer = styled.div`
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 1rem;
     grid-row-gap: 0px;
+    > a {
+      height: 300px;
+    }
     > a:nth-child(1) {
       grid-area: 1 / 1 / 2 / 3;
       display: flex;
       flex-direction: row-reverse;
-      height: 350px;
     }
     > a:nth-child(2) {
       grid-area: 2 / 1 / 3 / 2;
-      height: 350px;
     }
     > a:nth-child(3) {
       grid-area: 2 / 2 / 3 / 3;
-      height: 350px;
     }
   }
 `;
 export const ArticleWrapper = styled.a`
   display: block;
+  height: 100%;
   background: ${({ theme: { colors } }) => colors.grey5};
   margin: 2rem 0;
   text-decoration: none;
@@ -91,8 +92,6 @@ export const ArticleImage = styled.div<{ img: string }>`
   width: 100%;
   background-position: center;
   background-size: cover;
-  @media (min-width: 768px) {
-  }
 `;
 export const ArticleMetaDetailsContainer = styled.div``;
 export const ArticleDetails = styled.div`
