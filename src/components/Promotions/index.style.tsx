@@ -1,7 +1,26 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ ref: any; isVisible: boolean }>`
   padding: 1rem;
+  @media (min-width: 450px) {
+    .heading {
+      transform: scale(${({ isVisible }) => (isVisible ? "1" : "0")});
+      opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
+      transition: all 0.7s ease-in;
+    }
+    .paragraph {
+      transform: translateY(
+        ${({ isVisible }) => (isVisible ? "0px" : "200px")}
+      );
+      opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
+      transition: all 0.7s ease-in;
+    }
+    .cardsContainer {
+      transform: scale(${({ isVisible }) => (isVisible ? "1" : "0.7")});
+      opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
+      transition: all 0.7s ease-in;
+    }
+  }
 `;
 export const TitleContainer = styled.div`
   margin-bottom: 1rem;

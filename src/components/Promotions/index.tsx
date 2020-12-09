@@ -1,3 +1,4 @@
+import { useState, useLayoutEffect, useRef } from "react";
 import { Wrapper, TitleContainer, CardsContainer, Promo } from "./index.style";
 import { Heading3, Paragraph } from "../Typography";
 import aiIcon from "../../assets/icons/ai.svg";
@@ -46,16 +47,33 @@ const data = [
 ];
 
 const Promotions = () => {
+  const wrapperRef = useRef<HTMLDivElement>();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleObserver = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => setIsVisible(entry.isIntersecting));
+  };
+
+  useLayoutEffect(() => {
+    const observer = new IntersectionObserver(handleObserver, {
+      threshold: 0.4,
+    });
+    if (wrapperRef && wrapperRef.current) {
+      observer.observe(wrapperRef.current);
+    }
+  }, []);
   return (
-    <Wrapper>
+    <Wrapper ref={wrapperRef} isVisible={isVisible}>
       <TitleContainer>
-        <Heading3>Why is Saasly a great note taking app for you?</Heading3>
-        <Paragraph variant="pSmall">
+        <Heading3 className="heading">
+          Why is Saasly a great note taking app for you?
+        </Heading3>
+        <Paragraph variant="pSmall" className="paragraph">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis mattis
           condimentum at quam tellus non.
         </Paragraph>
       </TitleContainer>
-      <CardsContainer>
+      <CardsContainer className="cardsContainer">
         {data.map((item, index) => (
           <Promo
             key={index}

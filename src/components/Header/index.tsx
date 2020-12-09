@@ -1,3 +1,4 @@
+import { useRef, useLayoutEffect } from "react";
 import {
   Wrapper,
   HeaderMedia,
@@ -18,6 +19,26 @@ import company4 from "../../assets/img/company4.svg";
 import company5 from "../../assets/img/company5.svg";
 const companiesLogos = [company1, company2, company3, company4, company5];
 const Header = () => {
+  const foregroundRef = useRef<HTMLImageElement>(null);
+  const backgroundOneRef = useRef<HTMLImageElement>(null);
+  const backgroundTwoRef = useRef<HTMLImageElement>(null);
+  const handleScrollParallax = () => {
+    const rate = window.pageYOffset * -0.1;
+    if (foregroundRef && foregroundRef.current) {
+      foregroundRef.current.style.transform = `translate3d(0px, ${rate}px,0px)`;
+    }
+    if (backgroundOneRef && backgroundOneRef.current) {
+      backgroundOneRef.current.style.transform = `translate3d(0px, ${rate}px,0px)`;
+    }
+    if (backgroundTwoRef && backgroundTwoRef.current) {
+      backgroundTwoRef.current.style.transform = `translate3d(0px, ${
+        rate + 0.7
+      }px,0px)`;
+    }
+  };
+  useLayoutEffect(() => {
+    window.addEventListener("scroll", handleScrollParallax);
+  }, []);
   return (
     <Wrapper>
       <Heading1>The Next Generation Notes App</Heading1>
@@ -27,9 +48,19 @@ const Header = () => {
       </Paragraph>
       <Newsletter withArrow center />
       <HeaderMedia>
-        <Background src={backgroudImg1} alt="plant" direction="left" />
-        <Background src={backgroudImg2} alt="plant" direction="right" />
-        <Foreground src={foregroundImg} alt="screenshot" />
+        <Background
+          ref={backgroundOneRef}
+          src={backgroudImg1}
+          alt="plant"
+          direction="left"
+        />
+        <Background
+          ref={backgroundTwoRef}
+          src={backgroudImg2}
+          alt="plant"
+          direction="right"
+        />
+        <Foreground ref={foregroundRef} src={foregroundImg} alt="screenshot" />
       </HeaderMedia>
       <CompaniesContainer>
         {companiesLogos.map((logo, index) => (

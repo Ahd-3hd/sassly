@@ -1,3 +1,4 @@
+import { useState, useLayoutEffect, useRef } from "react";
 import {
   Wrapper,
   TitleContainer,
@@ -22,7 +23,6 @@ import clockIcon from "../../assets/icons/clock.svg";
 import notesImg from "../../assets/img/notes.jpg";
 import projectsImg from "../../assets/img/projects.jpg";
 import documentsImg from "../../assets/img/documents.jpg";
-import { useState } from "react";
 
 const data = [
   {
@@ -55,12 +55,25 @@ const data = [
 ];
 
 const Features = () => {
+  const wrapperRef = useRef<HTMLDivElement>();
   const [activeTab, setActiveTab] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const handleObserver = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => setIsVisible(entry.isIntersecting));
+  };
+  useLayoutEffect(() => {
+    const observer = new IntersectionObserver(handleObserver, {
+      threshold: 0.4,
+    });
+    if (wrapperRef && wrapperRef.current) {
+      observer.observe(wrapperRef.current);
+    }
+  }, []);
   return (
-    <Wrapper>
-      <TitleContainer>
+    <Wrapper ref={wrapperRef} isVisible={isVisible}>
+      <TitleContainer className="heading-features">
         <Heading4>What our customers do with Saasly?</Heading4>
-        <Paragraph variant="pNormal">
+        <Paragraph variant="pNormal" className="paragraph-features">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </Paragraph>
       </TitleContainer>

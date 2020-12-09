@@ -35,19 +35,24 @@ export const HeaderMedia = styled.div`
   margin: 1rem auto;
 `;
 
-export const Foreground = styled.img`
+export const Foreground = styled.img<{ ref: any }>`
   width: 100%;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   @media (min-width: 768px) {
     width: 65%;
   }
+  transition: transform 0.7s ease-out;
 `;
-export const Background = styled.img<{ direction: string }>`
+export const Background = styled.img<{
+  direction: string;
+  ref: any;
+}>`
   display: none;
   max-width: 300px;
   height: 100%;
   width: auto;
+  transition: transform 1s ease-in;
   object-fit: contain;
   @media (min-width: 768px) {
     display: block;
