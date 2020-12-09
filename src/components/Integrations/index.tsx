@@ -1,3 +1,4 @@
+import { useState, useLayoutEffect, useRef } from "react";
 import {
   Wrapper,
   NewsletterContainer,
@@ -33,18 +34,33 @@ const data = [
 ];
 
 const Integration = () => {
+  const wrapperRef = useRef<HTMLDivElement>();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleObserver = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => setIsVisible(entry.isIntersecting));
+  };
+
+  useLayoutEffect(() => {
+    const observer = new IntersectionObserver(handleObserver, {
+      threshold: 0.4,
+    });
+    if (wrapperRef && wrapperRef.current) {
+      observer.observe(wrapperRef.current);
+    }
+  }, []);
   return (
-    <Wrapper>
+    <Wrapper ref={wrapperRef} isVisible={isVisible}>
       <NewsletterContainer>
-        <TextContainer>
+        <TextContainer className="heading">
           <Heading2>Built-in Integrations</Heading2>
-          <Paragraph variant="pNormal">
+          <Paragraph variant="pNormal" className="paragraph">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </Paragraph>
         </TextContainer>
         <Newsletter />
       </NewsletterContainer>
-      <IntegrationsContainer>
+      <IntegrationsContainer className="cardsContainer">
         {data.map((item) => (
           <GreyCard
             key={item.title}

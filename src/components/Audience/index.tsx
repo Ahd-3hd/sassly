@@ -10,6 +10,8 @@ import audience2 from "../../assets/img/audience2.png";
 import audience3 from "../../assets/img/audience3.png";
 import audience4 from "../../assets/img/audience4.png";
 import Newsletter from "../Newletter";
+import { useState, useLayoutEffect, useRef } from "react";
+
 const data = [
   {
     img: audience1,
@@ -38,15 +40,30 @@ const data = [
 ];
 
 const Audience = () => {
+  const wrapperRef = useRef<HTMLDivElement>();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleObserver = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => setIsVisible(entry.isIntersecting));
+  };
+
+  useLayoutEffect(() => {
+    const observer = new IntersectionObserver(handleObserver, {
+      threshold: 0.4,
+    });
+    if (wrapperRef && wrapperRef.current) {
+      observer.observe(wrapperRef.current);
+    }
+  }, []);
   return (
-    <Wrapper>
+    <Wrapper ref={wrapperRef} isVisible={isVisible}>
       <TitleContainer>
-        <Heading3>Designed to fit every use case</Heading3>
-        <Paragraph variant="pNormal">
+        <Heading3 className="heading">Designed to fit every use case</Heading3>
+        <Paragraph variant="pNormal" className="paragraph">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </Paragraph>
       </TitleContainer>
-      <CardsContainer>
+      <CardsContainer className="cardsContainer">
         {data.map((item) => (
           <AudienceCard
             key={item.title}

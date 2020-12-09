@@ -5,6 +5,7 @@ import customer1 from "../../assets/img/customer1.jpg";
 import customer2 from "../../assets/img/customer2.jpg";
 import customer3 from "../../assets/img/customer3.jpg";
 import customer4 from "../../assets/img/customer4.jpg";
+import { useState, useLayoutEffect, useRef } from "react";
 
 const data = [
   {
@@ -37,18 +38,33 @@ const data = [
   },
 ];
 const Customers = () => {
+  const wrapperRef = useRef<HTMLDivElement>();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleObserver = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => setIsVisible(entry.isIntersecting));
+  };
+
+  useLayoutEffect(() => {
+    const observer = new IntersectionObserver(handleObserver, {
+      threshold: 0.4,
+    });
+    if (wrapperRef && wrapperRef.current) {
+      observer.observe(wrapperRef.current);
+    }
+  }, []);
   return (
-    <Wrapper>
+    <Wrapper ref={wrapperRef} isVisible={isVisible}>
       <TitleContainer>
-        <Heading3>
+        <Heading3 className="heading">
           Don't take our word for it, see what our customers say
         </Heading3>
-        <Paragraph variant="pNormal">
+        <Paragraph variant="pNormal" className="paragraph">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis mattis
           condimentum at quam tellus non.
         </Paragraph>
       </TitleContainer>
-      <CustomersContainer>
+      <CustomersContainer className="cardsContainer">
         {data.map((item) => (
           <Quote
             key={item.name}
